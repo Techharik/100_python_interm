@@ -56,10 +56,13 @@ while is_on:
     elif flavour == 'report':
         cofee_maker.report()
         money_machine.report()
+
     else:
         drink = menu.find_drink(flavour)
         if cofee_maker.is_resource_sufficient(drink) and money_machine.make_payment(drink.cost):
              cofee_maker.make_coffee(drink)
+
+
                 
 
 
