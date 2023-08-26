@@ -57,6 +57,8 @@ def update_report(flav):
             report(resources)
 
 def check_resources(flav):
+# ?instead this we can create a for loop and check given flavour is > = resources item return false
+
         if flav == 'cappuccino':
                 if resources['water'] >= MENU['cappuccino']['ingredients']['water'] and resources["milk"] >= MENU['cappuccino']['ingredients']['milk'] and resources["coffee"] >= MENU['cappuccino']['ingredients']['coffee'] :
                     return True
