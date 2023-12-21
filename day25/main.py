@@ -17,18 +17,46 @@
 import pandas 
 
 data = pandas.read_csv('wether_data.csv')
-# print(data['temp'])
+# # print(data['temp'])
 
-temp_list = data['temp'].to_list()
-count = len(temp_list)
+# temp_list = data['temp'].to_list()
+# count = len(temp_list)
 
-total = 0
-for val in temp_list:
-    total = total + val 
+# total = 0
+# for val in temp_list:
+#     total = total + val 
 
-print(total/count)
+# print(total/count)
 
 
-print(data['temp'].max())
+# print(data['temp'].max())
 
 #? getting data in pandas has 2 way data['temp'] or data.temp
+
+#?getting row 
+
+# (0°C × 9/5) + 32 = 32°F
+# print(data[data.temp == data.temp.max()])
+
+# monday = data[data.day == 'monday']
+
+# temp = int(monday.temp)
+
+# fh = (temp * 9/5) + 32
+
+# print(fh)
+
+
+
+
+#?creating a datat frame from scratch
+
+data_dict = {
+    'students' :['amy','Hari'],
+    'Scores' :[23,45]
+}
+
+data = pandas.DataFrame(data_dict)
+print(data)
+
+data.to_csv('myNewdata.csv')
