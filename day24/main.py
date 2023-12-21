@@ -23,7 +23,7 @@
 
 # with open('./letters/starting_letter.txt') as letter:
 with open('./input/Names/invited_letters.txt') as name:
-        Names = name.read().split()
+        Names = name.read().split()  # we can use readlines() to convert that to list
         for N in Names:
                 with open('./input/letters/starting_letter.txt') as letter:
                         content = letter.read().replace('[name]', N)
