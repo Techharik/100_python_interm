@@ -14,7 +14,7 @@
 
 #? pandas data analysis library to handle tabular data
 
-import pandas 
+# import pandas 
 
 # data = pandas.read_csv('wether_data.csv')
 # # print(data['temp'])
@@ -61,19 +61,53 @@ import pandas
 
 # data.to_csv('myNewdata.csv')
 
+#? Data analysis first with nyc data for number of squirrels
 
-data = pandas.read_csv('nycdata.csv')
-# print(data['Primary Fur Color'])
-
-
-data_dict ={
-    'fur colors':['Gray','Cinnamon','Black'],
-    'counts':[]
-}
-
-for color in data_dict["fur colors"]:
-    data_dict['counts'].append(len(data[data['Primary Fur Color']== color]))
+# data = pandas.read_csv('nycdata.csv')
+# # print(data['Primary Fur Color'])
 
 
-newInput = pandas.DataFrame(data_dict)
-newInput.to_csv('output.csv')
+# data_dict ={
+#     'fur colors':['Gray','Cinnamon','Black'],
+#     'counts':[]
+# }
+
+# for color in data_dict["fur colors"]:
+#     data_dict['counts'].append(len(data[data['Primary Fur Color']== color]))
+
+
+# newInput = pandas.DataFrame(data_dict)
+# newInput.to_csv('output.csv')
+
+
+#? us states finding 
+
+import turtle
+import pandas 
+
+data = pandas.read_csv('50_states.csv')
+
+screen = turtle.Screen()
+image = 'blank_states_img.gif'
+
+screen.addshape(image)
+turtle.shape(image)
+
+guess_state=[]
+Score = 0
+while len(guess_state) < 50:
+    answer = screen.textinput(prompt="What is the state name",title=f'Score -  {Score}')
+
+    pos = data[data['state']==answer]
+    print(pos.x)
+    t = turtle.Turtle()
+    t.hideturtle()
+    t.penup()
+    t.goto(int(pos.x),int(pos.y))
+    t.write(answer)
+    Score += 1
+
+
+
+
+screen.exitonclick()
