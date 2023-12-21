@@ -16,7 +16,7 @@
 
 import pandas 
 
-data = pandas.read_csv('wether_data.csv')
+# data = pandas.read_csv('wether_data.csv')
 # # print(data['temp'])
 
 # temp_list = data['temp'].to_list()
@@ -51,12 +51,29 @@ data = pandas.read_csv('wether_data.csv')
 
 #?creating a datat frame from scratch
 
-data_dict = {
-    'students' :['amy','Hari'],
-    'Scores' :[23,45]
+# data_dict = {
+#     'students' :['amy','Hari'],
+#     'Scores' :[23,45]
+# }
+
+# data = pandas.DataFrame(data_dict)
+# print(data)
+
+# data.to_csv('myNewdata.csv')
+
+
+data = pandas.read_csv('nycdata.csv')
+# print(data['Primary Fur Color'])
+
+
+data_dict ={
+    'fur colors':['Gray','Cinnamon','Black'],
+    'counts':[]
 }
 
-data = pandas.DataFrame(data_dict)
-print(data)
+for color in data_dict["fur colors"]:
+    data_dict['counts'].append(len(data[data['Primary Fur Color']== color]))
 
-data.to_csv('myNewdata.csv')
+
+newInput = pandas.DataFrame(data_dict)
+newInput.to_csv('output.csv')
