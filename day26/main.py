@@ -77,4 +77,49 @@ passed_test = {key:value for (key,value) in new_dic.items() if new_dic[key]  > 4
 
 # print(passed_test)
 
-exerices
+# exerices-1 counting the words in string using dic comperhension
+
+ques = 'what is the name of the person?'
+
+word_list = ques.split(' ')
+
+word_count = {word:len(word) for word in word_list}
+
+# print(word_count)
+
+# exercises- 2 convert the week dictionary report to a fareheit
+
+# formula (c*9/5)+32
+
+wether_report = {
+    "monday":12,
+    "tuesday":14,
+    "wednesday":87,
+}
+
+ferh_whether_report = {day:(cel*9/5)+32 for (day,cel) in wether_report.items()}
+
+# print(ferh_whether_report)
+
+# // iterrows in pandas looping
+import pandas as pd
+
+data = pd.read_csv("nato_phonetic_alphabet.csv")
+
+
+new_list = {row.letter:row.code for (ind,row) in data.iterrows()}
+
+# print(new_list)
+
+name = input("Enter your name?").upper()
+
+output_list =[new_list[let] for let in name]
+
+print(output_list)
+
+
+# Summary
+
+# list comperihension - loop condition
+# dict comperhension - loop, list, dic, condtions,
+# pandas looping throw csv file.
