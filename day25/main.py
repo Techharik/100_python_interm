@@ -83,7 +83,7 @@
 #? us states finding 
 
 import turtle
-import pandas 
+import pandas
 
 data = pandas.read_csv('50_states.csv')
 
@@ -98,7 +98,7 @@ Score = 0
 while len(guess_state) < 50:
     answer = screen.textinput(prompt="What is the state name",title=f'Score -  {Score}')
 
-    pos = data[data['state']==answer]
+    pos = data[data['state'] == answer]
     print(pos.x)
     t = turtle.Turtle()
     t.hideturtle()
