@@ -14,10 +14,10 @@
 
 #? pandas data analysis library to handle tabular data
 
-# import pandas 
+import pandas 
 
-# data = pandas.read_csv('wether_data.csv')
-# # print(data['temp'])
+data = pandas.read_csv('wether_data.csv')
+# print(data['temp'])
 
 # temp_list = data['temp'].to_list()
 # count = len(temp_list)
@@ -38,7 +38,7 @@
 # (0°C × 9/5) + 32 = 32°F
 # print(data[data.temp == data.temp.max()])
 
-# monday = data[data.day == 'monday']
+# monday = data[data.day == 'friday']
 
 # temp = int(monday.temp)
 
@@ -80,7 +80,7 @@
 # newInput.to_csv('output.csv')
 
 
-#? us states finding 
+# #? us states finding 
 
 import turtle
 import pandas
