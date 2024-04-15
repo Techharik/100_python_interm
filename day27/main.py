@@ -16,32 +16,39 @@
 
 # we can pass a keyword argument and it returns  a dictionary.add()
 
-def add(**kwargs):
-    for key, value in kwargs.items():
-        print(key)
-          
+# def add(**kwargs):
+#     for key, value in kwargs.items():
+#         print(key,value) 
+# add(add=3,sub=4)
 
 
-add(add=3,sub=4)
+from tkinter import *
 
-
-import tkinter as tk
-
-window = tk.Tk()
+window = Tk()
 
 
 window.title("First GUI Program");
 window.minsize(width=500,height=300)
 
 
-
-my_lable = tk.Label(text='I am a robot',font=('Arial',34,"bold"))
+# text label
+my_lable = Label(text='I am a robot',font=('Arial',34,"bold"))
 my_lable.pack() # pack is important to show
 
 
 
 
+# entry
+input = Entry(width=15)
+input.pack()
+ 
+def button_clicked():
+    resut_input = input.get()
+    my_lable['text']=resut_input
 
+# button
+button = Button(text='Click Me',command=button_clicked)
+button.pack()
 
 
 window.mainloop()
