@@ -104,10 +104,16 @@ ferh_whether_report = {day:(cel*9/5)+32 for (day,cel) in wether_report.items()}
 # // iterrows in pandas looping
 import pandas as pd
 
+#? Intterrows inbuild rows
+
 data = pd.read_csv("nato_phonetic_alphabet.csv")
 
 
 new_list = {row.letter:row.code for (ind,row) in data.iterrows()}
+
+# itterows in pandas looping
+# ind=0,1,2
+# row = student, score
 
 # print(new_list)
 
