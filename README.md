@@ -1,1 +1,1 @@
-Python Interm
+Python Intermediate 
